@@ -14,6 +14,9 @@
 		6A05B21C2303A16C00EB5A96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A05B21A2303A16C00EB5A96 /* LaunchScreen.storyboard */; };
 		6A05B2252303A35400EB5A96 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A05B2242303A35400EB5A96 /* CoreDataStack.swift */; };
 		6A05B2282303A37400EB5A96 /* shoppingListRev2+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A05B2272303A37400EB5A96 /* shoppingListRev2+Convenience.swift */; };
+		6A05B22A2303A5C800EB5A96 /* ShoppingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A05B2292303A5C800EB5A96 /* ShoppingListController.swift */; };
+		6A05B22E2303A8DB00EB5A96 /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A05B22D2303A8DB00EB5A96 /* ShoppingListTableViewController.swift */; };
+		6A05B2302303A8FB00EB5A96 /* ShoppingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A05B22F2303A8FB00EB5A96 /* ShoppingItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		6A05B21D2303A16C00EB5A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A05B2242303A35400EB5A96 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		6A05B2272303A37400EB5A96 /* shoppingListRev2+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shoppingListRev2+Convenience.swift"; sourceTree = "<group>"; };
+		6A05B2292303A5C800EB5A96 /* ShoppingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShoppingListController.swift; path = ../ShoppingListController.swift; sourceTree = "<group>"; };
+		6A05B22D2303A8DB00EB5A96 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
+		6A05B22F2303A8FB00EB5A96 /* ShoppingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShoppingItemTableViewCell.swift; path = ../ShoppingItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +64,11 @@
 		6A05B20D2303A16B00EB5A96 /* shoppingListRev2 */ = {
 			isa = PBXGroup;
 			children = (
+				6A05B22C2303A8BB00EB5A96 /* New Group1 */,
 				6A05B2232303A30A00EB5A96 /* Resources */,
 				6A05B2262303A35800EB5A96 /* Model */,
+				6A05B22B2303A5CC00EB5A96 /* New Group */,
+				6A05B2312303A91000EB5A96 /* New Group2 */,
 			);
 			path = shoppingListRev2;
 			sourceTree = "<group>";
@@ -84,6 +93,30 @@
 				6A05B2272303A37400EB5A96 /* shoppingListRev2+Convenience.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6A05B22B2303A5CC00EB5A96 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				6A05B2292303A5C800EB5A96 /* ShoppingListController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		6A05B22C2303A8BB00EB5A96 /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+				6A05B22D2303A8DB00EB5A96 /* ShoppingListTableViewController.swift */,
+			);
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		6A05B2312303A91000EB5A96 /* New Group2 */ = {
+			isa = PBXGroup;
+			children = (
+				6A05B22F2303A8FB00EB5A96 /* ShoppingItemTableViewCell.swift */,
+			);
+			path = "New Group2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A05B2282303A37400EB5A96 /* shoppingListRev2+Convenience.swift in Sources */,
+				6A05B2302303A8FB00EB5A96 /* ShoppingItemTableViewCell.swift in Sources */,
 				6A05B2252303A35400EB5A96 /* CoreDataStack.swift in Sources */,
 				6A05B2172303A16B00EB5A96 /* shoppingListRev2.xcdatamodeld in Sources */,
 				6A05B20F2303A16B00EB5A96 /* AppDelegate.swift in Sources */,
+				6A05B22A2303A5C800EB5A96 /* ShoppingListController.swift in Sources */,
+				6A05B22E2303A8DB00EB5A96 /* ShoppingListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 899TSM5Z6B;
-				INFOPLIST_FILE = shoppingListRev2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/shoppingListRev2/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 899TSM5Z6B;
-				INFOPLIST_FILE = shoppingListRev2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/shoppingListRev2/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,8 +7,11 @@
 //
 
 import Foundation
-class CoreDataStack {
+import CoreData
     
+    class CoreDataStack {
+        
+
     static let container: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: "shoppingListRev2")

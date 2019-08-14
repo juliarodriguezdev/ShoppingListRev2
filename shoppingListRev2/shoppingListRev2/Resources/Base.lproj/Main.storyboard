@@ -9,16 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Shopping List Table View Controller-->
         <scene sceneID="CGF-BG-kgh">
             <objects>
-                <tableViewController id="B1s-D0-aGA" sceneMemberID="viewController">
+                <tableViewController id="B1s-D0-aGA" customClass="ShoppingListTableViewController" customModule="shoppingListRev2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xiX-iB-aGd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingItem" id="OcQ-9u-GoL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingItem" id="OcQ-9u-GoL" customClass="ShoppingItemTableViewCell" customModule="shoppingListRev2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OcQ-9u-GoL" id="Xd1-2v-HSj">
@@ -26,30 +26,39 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upf-WC-qGF">
-                                            <rect key="frame" x="8" y="8" width="398" height="27.5"/>
+                                            <rect key="frame" x="8" y="5" width="398" height="33.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9M-fT-pMO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="370.5" height="27.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="364.5" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgY-wI-jPh">
-                                                    <rect key="frame" x="370.5" y="0.0" width="27.5" height="27.5"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgY-wI-jPh">
+                                                    <rect key="frame" x="364.5" y="0.0" width="33.5" height="33.5"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="33.5" id="Saz-Tt-U3C"/>
                                                         <constraint firstAttribute="width" secondItem="cgY-wI-jPh" secondAttribute="height" multiplier="1:1" id="mOG-D6-SIC"/>
                                                     </constraints>
+                                                    <state key="normal" image="incomplete"/>
+                                                    <connections>
+                                                        <action selector="isCompleteButtonTapped:" destination="OcQ-9u-GoL" eventType="touchUpInside" id="JHO-Si-dGP"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="upf-WC-qGF" firstAttribute="top" secondItem="Xd1-2v-HSj" secondAttribute="top" constant="8" id="9Gq-lj-Ci1"/>
+                                        <constraint firstItem="upf-WC-qGF" firstAttribute="top" secondItem="Xd1-2v-HSj" secondAttribute="top" constant="5" id="9Gq-lj-Ci1"/>
                                         <constraint firstItem="upf-WC-qGF" firstAttribute="leading" secondItem="Xd1-2v-HSj" secondAttribute="leading" constant="8" id="JbK-Uc-v4G"/>
                                         <constraint firstAttribute="trailing" secondItem="upf-WC-qGF" secondAttribute="trailing" constant="8" id="Osh-bw-P5J"/>
-                                        <constraint firstAttribute="bottom" secondItem="upf-WC-qGF" secondAttribute="bottom" constant="8" id="SeU-8h-a9G"/>
+                                        <constraint firstAttribute="bottom" secondItem="upf-WC-qGF" secondAttribute="bottom" constant="5" id="SeU-8h-a9G"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="groceryItemLabel" destination="J9M-fT-pMO" id="10W-uK-yLk"/>
+                                    <outlet property="isCompleteButton" destination="cgY-wI-jPh" id="PtT-Iq-W2w"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -58,7 +67,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Y1B-3e-oGA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tgq-sM-mmc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tgq-sM-mmc">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="B1s-D0-aGA" id="X5D-Vp-YSx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eg-e9-Pma" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,4 +97,7 @@
             <point key="canvasLocation" x="2.8985507246376816" y="170.75892857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="incomplete" width="512" height="512"/>
+    </resources>
 </document>
